@@ -1,4 +1,7 @@
+import './ors-layout/ors-layout.module.js';
+
 const app = angular.module('main', ['ors-layout']);
-app.run(function ($rootScope) {
-	$rootScope.name = 'Rems';
+
+app.run( function ($rootScope) {	
+	$rootScope.name = 'Rems';	
 });

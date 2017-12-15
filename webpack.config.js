@@ -1,8 +1,9 @@
 const path = require('path');
-
+const webpack = require('webpack');
 module.exports = {
 	entry: {
 		bundle: './app/app.js',
+		vendors: './app/vendors.js'
 	},
 	output: {
 		filename: '[name].js',
@@ -17,5 +18,9 @@ module.exports = {
 			}]		
 		}]
 	},
-	devtool: 'source-map'
+	devtool: 'source-map',
+	plugins: [
+	  new webpack.optimize.CommonsChunkPlugin('vendors'),
+	  new webpack.optimize.UglifyJsPlugin()
+	]
 };
